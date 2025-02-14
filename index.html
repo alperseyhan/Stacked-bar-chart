@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Normalized Stacked Bar Chart</title>
+    <title>Normalized Stacked Bar Charts</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         .bar-chart {
@@ -13,10 +13,52 @@
             font-size: 14px;
             font-weight: bold;
         }
+        .chart-container {
+            margin: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button.active {
+            background-color: #98D8BF;
+            color: white;
+        }
+        .chart {
+            display: none;
+            margin-bottom: 50px;
+        }
+        .chart.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <div id="chart"></div>
-    <script type="module" src="index.js"></script>
+    <div class="button-container">
+        <button id="btnData1" class="active">Data 1 (ESG)</button>
+        <button id="btnData2">Data 2 (Criteria)</button>
+        <button id="btnData3">Data 3 (Social)</button>
+        <button id="btnData4">Data 4 (Governance)</button>
+        <button id="btnData5">Data 5 (Performance)</button>
+        <button id="btnData6">Data 6 (Scenario)</button>
+    </div>
+    <div class="chart-container">
+        <div id="chart1" class="chart active"></div>
+        <div id="chart2" class="chart"></div>
+        <div id="chart3" class="chart"></div>
+        <div id="chart4" class="chart"></div>
+        <div id="chart5" class="chart"></div>
+        <div id="chart6" class="chart"></div>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html> 
